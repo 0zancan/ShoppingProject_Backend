@@ -8,8 +8,7 @@ using System.Text;
 
 namespace DataAccess.Concrete.EntityFramework
 {
-    class EfCustomerDal : EfEntityRepositoryBase<Customer, NorthwindContext>, ICustomerDal
+    public class EfOrderDal : EfEntityRepositoryBase<Order, NorthwindContext>, IOrderDal
     {
-       
     }
 }

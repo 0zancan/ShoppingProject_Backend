@@ -3,6 +3,7 @@ using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Business.Concrete
@@ -11,10 +12,6 @@ namespace Business.Concrete
     {
         ICategoryDal _categoryDal;
 
-        public CategoryManager()
-        {
-        }
-
         public CategoryManager(ICategoryDal categoryDal)
         {
             _categoryDal = categoryDal;
@@ -22,6 +19,11 @@ namespace Business.Concrete
         public List<Category> GetAll()
         {
             return _categoryDal.GetAll();
+        }
+
+        public Category GetById(int categoryId)
+        {
+            return _categoryDal.Get(c => c.CategoryId == categoryId);
         }
     }
 }
