@@ -9,38 +9,38 @@ namespace ConsoleUI
     {
         static void Main(string[] args)
         {
-            ProductTest();
+            //ProductTest();
 
             //CategoryTest();
         }
 
-        private static void CategoryTest()
-        {
-            CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
-            foreach (var item in categoryManager.GetAll())
-            {
-                Console.WriteLine(item.CategoryName);
-            }
-        }
+        //private static void CategoryTest()
+        //{
+        //    CategoryManager categoryManager = new CategoryManager(new EfCategoryDal());
+        //    foreach (var item in categoryManager.GetAll())
+        //    {
+        //        Console.WriteLine(item.CategoryName);
+        //    }
+        //}
 
-        private static ProductManager ProductTest()
-        {
-            ProductManager productManager = new ProductManager(new EfProductDal());
+        //private static ProductManager ProductTest()
+        //{
+        //    ProductManager productManager = new ProductManager(new EfProductDal());
 
-            var result = productManager.GetProductDetails();
-            if (result.Success == true)
-            {
-                foreach (var product in productManager.GetProductDetails().Data)
-                {
-                    Console.WriteLine("Product Id = " + product.ProductId + " Product Name = " + product.ProductName + " Category Name = " + product.CategoryName);
-                }
-            }
-            else
-            {
-                Console.WriteLine(result.Message);
-            }
+        //    var result = productManager.GetProductDetails();
+        //    if (result.Success == true)
+        //    {
+        //        foreach (var product in productManager.GetProductDetails().Data)
+        //        {
+        //            Console.WriteLine("Product Id = " + product.ProductId + " Product Name = " + product.ProductName + " Category Name = " + product.CategoryName);
+        //        }
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine(result.Message);
+        //    }
 
-            return productManager;
-        }
+        //    return productManager;
+        //}
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Business.Abstract;
+using Core.Utilities.Results;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,12 +9,12 @@ namespace Business.Concrete
 {
     public class OrderManager : IOrderService
     {
-        public List<Category> GetAll()
+        public IDataResult<List<Order>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public List<Category> GetById(int categoryId)
+        public IDataResult<Order> GetById(int categoryId)
         {
             throw new NotImplementedException();
         }
