@@ -14,7 +14,8 @@ namespace Core.Utilities.Interceptors
             var methodAttributes = type.GetMethod(method.Name)
                 .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);
             classAttributes.AddRange(methodAttributes);
-
+            // Alttaki kodu eklersem ve file logger yazarsam her metodda burası çalışır ve süreleri loglarım!
+            //classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger)));
             return classAttributes.OrderBy(x => x.Priority).ToArray();
         }
     }
